@@ -33,8 +33,8 @@ public class CameraControllerScript : MonoBehaviour
         }
 
         //change target point
-        if (Input.GetKey(KeyCode.W)) yVel = -15;
-        else if (Input.GetKey(KeyCode.S)) yVel = 15;
+        if (Input.GetKey(KeyCode.W)) yVel = 15;
+        else if (Input.GetKey(KeyCode.S)) yVel = -15;
         else yVel = 0;
 
         if (Input.GetKey(KeyCode.A)) xVel = 15;
@@ -42,7 +42,7 @@ public class CameraControllerScript : MonoBehaviour
         else xVel = 0;
 
 
-        this.transform.position += Vector3.Scale(new Vector3(xVel, 0, yVel), Vector3.one);
-        target += Vector3.Scale(new Vector3(xVel, 0, yVel), Vector3.one);
+        this.transform.position += Vector3.Scale(new Vector3(xVel, 0, yVel), transform.forward);
+        target += Vector3.Scale(new Vector3(xVel, 0, yVel), transform.forward);
     }
 }
