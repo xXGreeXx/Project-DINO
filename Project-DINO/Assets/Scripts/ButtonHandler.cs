@@ -6,6 +6,7 @@ public class ButtonHandler : MonoBehaviour {
     public static GameObject optionsPane;
     public static GameObject buildPane;
     public static GameObject buildingDataPane;
+    public static GameObject digSitePane;
 
     public void Start()
     {
@@ -13,10 +14,12 @@ public class ButtonHandler : MonoBehaviour {
         optionsPane = GameObject.Find("OptionsPane");
         buildPane = GameObject.Find("BuildPane");
         buildingDataPane = GameObject.Find("BuildingDataPane");
+        digSitePane = GameObject.Find("SiteDataPane");
         mapPane.SetActive(false);
         optionsPane.SetActive(false);
         buildPane.SetActive(false);
         buildingDataPane.SetActive(false);
+        digSitePane.SetActive(false);
     }
 
     public void ButtonPressed(string button)
@@ -42,6 +45,17 @@ public class ButtonHandler : MonoBehaviour {
             sidewalk.AddComponent<BuildingPlacementHandler>();
 
             sidewalk.GetComponent<Renderer>().material = Resources.Load("sidewalkMat", typeof(Material)) as Material;
+            buildPane.SetActive(false);
+        }
+        if (button.Equals("buyelectricfence"))
+        {
+            GameObject fence = Instantiate(GameObject.Find("fence"));
+            fence.AddComponent<BuildingPlacementHandler>();
+            buildPane.SetActive(false);
+        }
+        if (button.Equals("Site1"))
+        {
+            digSitePane.SetActive(true);
         }
     }
 
