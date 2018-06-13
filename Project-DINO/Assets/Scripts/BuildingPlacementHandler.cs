@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class BuildingPlacementHandler : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
+    //Use this for initialization
+    void Start ()
+    {
+
+    }
 
     void Update()
     {
