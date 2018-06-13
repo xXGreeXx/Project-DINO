@@ -17,7 +17,7 @@ public class BoatMoveScript : MonoBehaviour {
         {
             transform.position += new Vector3(speed, 0, 0) * Time.deltaTime;
 
-            if (transform.position.x > -14670)
+            if (transform.position.x > -14640)
             {
                 speed -= 1.25F;
             }
