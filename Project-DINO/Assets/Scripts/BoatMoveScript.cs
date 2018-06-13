@@ -6,6 +6,7 @@ public class BoatMoveScript : MonoBehaviour {
 
     public static bool bringInBoat = true;
     float speed = 500;
+    bool down = false;
 
 	void Start ()
     {
@@ -17,10 +18,16 @@ public class BoatMoveScript : MonoBehaviour {
         {
             transform.position += new Vector3(speed, 0, 0) * Time.deltaTime;
 
-            if (transform.position.x > -14640)
+            if (transform.position.x > -14620)
             {
                 speed -= 1.25F;
             }
+        }
+
+        if(speed <= 0 && !down)
+        {
+            this.gameObject.GetComponent<Animator>().Play("State 0", 0);
+            down = true;
         }
     }
 }
