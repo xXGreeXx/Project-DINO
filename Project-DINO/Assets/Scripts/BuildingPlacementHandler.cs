@@ -10,7 +10,7 @@ public class BuildingPlacementHandler : MonoBehaviour {
 
     }
 
-    void Update()
+    void FixedUpdate()
     {
         RaycastHit hit;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
