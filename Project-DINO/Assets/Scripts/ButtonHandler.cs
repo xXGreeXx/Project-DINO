@@ -37,7 +37,11 @@ public class ButtonHandler : MonoBehaviour {
         }
         if (button.Equals("buysidewalk"))
         {
-            
+            GameObject sidewalk = GameObject.CreatePrimitive(PrimitiveType.Plane);
+            sidewalk.transform.localScale = new Vector3(8, 2, 35);
+            sidewalk.AddComponent<BuildingPlacementHandler>();
+
+            sidewalk.GetComponent<Renderer>().material = Resources.Load("sidewalkMat", typeof(Material)) as Material;
         }
     }
 
