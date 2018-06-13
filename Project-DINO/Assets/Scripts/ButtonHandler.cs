@@ -56,6 +56,16 @@ public class ButtonHandler : MonoBehaviour {
         if (button.Equals("Site1"))
         {
             digSitePane.SetActive(true);
+            digSitePane.transform.Find("Title").GetComponent<UnityEngine.UI.Text>().text = "Site #1";
+            digSitePane.transform.Find("Location").GetComponent<UnityEngine.UI.Text>().text = "Arizona, USA";
+            digSitePane.transform.Find("Cost").GetComponent<UnityEngine.UI.Text>().text = "$550";
+        }
+        if (button.Equals("Site2"))
+        {
+            digSitePane.SetActive(true);
+            digSitePane.transform.Find("Title").GetComponent<UnityEngine.UI.Text>().text = "Site #2";
+            digSitePane.transform.Find("Location").GetComponent<UnityEngine.UI.Text>().text = "Arizona, USA";
+            digSitePane.transform.Find("Cost").GetComponent<UnityEngine.UI.Text>().text = "$750";
         }
     }
 
