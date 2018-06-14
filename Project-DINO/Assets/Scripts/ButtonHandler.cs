@@ -53,6 +53,12 @@ public class ButtonHandler : MonoBehaviour {
             fence.AddComponent<BuildingPlacementHandler>();
             buildPane.SetActive(false);
         }
+        if (button.Equals("buyhotel"))
+        {
+            GameObject fence = Instantiate(GameObject.Find("hotel"));
+            fence.AddComponent<BuildingPlacementHandler>();
+            buildPane.SetActive(false);
+        }
         if (button.Equals("Site1"))
         {
             digSitePane.SetActive(true);
