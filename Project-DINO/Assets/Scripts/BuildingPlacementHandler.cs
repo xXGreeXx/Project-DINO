@@ -14,7 +14,7 @@ public class BuildingPlacementHandler : MonoBehaviour {
     {
         float distance_to_screen = Camera.main.WorldToScreenPoint(this.transform.position).z;
         Vector3 pos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, distance_to_screen));
-        pos.y = 2459;
+        pos.y = 2460;
         this.transform.position = pos;
 
         if (Input.GetMouseButtonDown(0)) Destroy(this.gameObject.GetComponent<BuildingPlacementHandler>());

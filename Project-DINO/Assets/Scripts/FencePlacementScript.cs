@@ -21,9 +21,13 @@ public class FencePlacementScript : MonoBehaviour {
             {
                 Destroy(this.gameObject.GetComponent<FencePlacementScript>());
 
+                GameObject pivot = new GameObject("Pivot");
+                pivot.transform.position = this.transform.position + (-transform.forward * 50);
+
                 GameObject fence = Instantiate(GameObject.Find("fence"));
+                fence.transform.SetParent(pivot.transform);
                 fence.AddComponent<FencePlacementScript>().placedFirstFence = true;
-                fence.transform.position = this.transform.position + new Vector3(0, 0, 50);
+                fence.transform.position = this.transform.position + (-transform.forward * 80);
             }
             else if (Input.GetMouseButtonDown(1)) Destroy(this.gameObject);
 
@@ -31,16 +35,21 @@ public class FencePlacementScript : MonoBehaviour {
         }
         else
         {
-            this.transform.LookAt(pos);
+            this.transform.parent.LookAt(pos);
 
             if (Input.GetMouseButtonDown(0))
             {
                 Destroy(this.gameObject.GetComponent<FencePlacementScript>());
 
+                GameObject pivot = new GameObject("Pivot");
+                pivot.transform.position = this.transform.position + (-transform.forward * 50);
+
                 GameObject fence = Instantiate(GameObject.Find("fence"));
+                fence.transform.SetParent(pivot.transform);
                 fence.AddComponent<FencePlacementScript>().placedFirstFence = true;
-                fence.transform.position = this.transform.position;
+                fence.transform.position = this.transform.position + (-transform.forward * 80);
             }
+            else if (Input.GetMouseButtonDown(1)) Destroy(this.gameObject);
         }
     }
 }

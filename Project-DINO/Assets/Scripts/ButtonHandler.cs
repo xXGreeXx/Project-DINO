@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ButtonHandler : MonoBehaviour {
 
@@ -28,6 +29,7 @@ public class ButtonHandler : MonoBehaviour {
 
     public void ButtonPressed(string button)
     {
+        //menu buttons
         if (button.Equals("map"))
         {
             mapPane.SetActive(!mapPane.activeInHierarchy);
@@ -46,6 +48,8 @@ public class ButtonHandler : MonoBehaviour {
         {
             optionsPane.SetActive(!optionsPane.activeInHierarchy);
         }
+
+        //build buttons
         if (button.Equals("buysidewalk"))
         {
             GameObject sidewalk = GameObject.CreatePrimitive(PrimitiveType.Plane);
@@ -69,6 +73,7 @@ public class ButtonHandler : MonoBehaviour {
             buildPane.SetActive(false);
         }
 
+        //environment buttons
         if (button.Equals("upterrain"))
         {
             MainGameHandler.selectedMouseTool = "up";
@@ -78,6 +83,7 @@ public class ButtonHandler : MonoBehaviour {
             MainGameHandler.selectedMouseTool = "down";
         }
 
+        //dig site buttons
         if (button.Equals("Site1"))
         {
             digSitePane.SetActive(true);
@@ -173,8 +179,80 @@ public class ButtonHandler : MonoBehaviour {
         {
             digSitePane.SetActive(true);
             digSitePane.transform.Find("Title").GetComponent<UnityEngine.UI.Text>().text = "Site #14";
-            digSitePane.transform.Find("Location").GetComponent<UnityEngine.UI.Text>().text = "Ukraine, Europe";
+            digSitePane.transform.Find("Location").GetComponent<UnityEngine.UI.Text>().text = "Egypt, Africa";
             digSitePane.transform.Find("Cost").GetComponent<UnityEngine.UI.Text>().text = "$2650";
+        }
+        if (button.Equals("Site15"))
+        {
+            digSitePane.SetActive(true);
+            digSitePane.transform.Find("Title").GetComponent<UnityEngine.UI.Text>().text = "Site #15";
+            digSitePane.transform.Find("Location").GetComponent<UnityEngine.UI.Text>().text = "Western Australia";
+            digSitePane.transform.Find("Cost").GetComponent<UnityEngine.UI.Text>().text = "$2650";
+        }
+        if (button.Equals("Site16"))
+        {
+            digSitePane.SetActive(true);
+            digSitePane.transform.Find("Title").GetComponent<UnityEngine.UI.Text>().text = "Site #16";
+            digSitePane.transform.Find("Location").GetComponent<UnityEngine.UI.Text>().text = "Northern Australia";
+            digSitePane.transform.Find("Cost").GetComponent<UnityEngine.UI.Text>().text = "$2650";
+        }
+        if (button.Equals("Site17"))
+        {
+            digSitePane.SetActive(true);
+            digSitePane.transform.Find("Title").GetComponent<UnityEngine.UI.Text>().text = "Site #17";
+            digSitePane.transform.Find("Location").GetComponent<UnityEngine.UI.Text>().text = "Niger, Africa";
+            digSitePane.transform.Find("Cost").GetComponent<UnityEngine.UI.Text>().text = "$2650";
+        }
+        if (button.Equals("Site18"))
+        {
+            digSitePane.SetActive(true);
+            digSitePane.transform.Find("Title").GetComponent<UnityEngine.UI.Text>().text = "Site #18";
+            digSitePane.transform.Find("Location").GetComponent<UnityEngine.UI.Text>().text = "Chad, Africa";
+            digSitePane.transform.Find("Cost").GetComponent<UnityEngine.UI.Text>().text = "$2650";
+        }
+        if (button.Equals("Site19"))
+        {
+            digSitePane.SetActive(true);
+            digSitePane.transform.Find("Title").GetComponent<UnityEngine.UI.Text>().text = "Site #19";
+            digSitePane.transform.Find("Location").GetComponent<UnityEngine.UI.Text>().text = "New Mexico, USA";
+            digSitePane.transform.Find("Cost").GetComponent<UnityEngine.UI.Text>().text = "$2650";
+        }
+        if (button.Equals("Site20"))    
+        {
+            digSitePane.SetActive(true);
+            digSitePane.transform.Find("Title").GetComponent<UnityEngine.UI.Text>().text = "Site #20";
+            digSitePane.transform.Find("Location").GetComponent<UnityEngine.UI.Text>().text = "Brazil, South America";
+            digSitePane.transform.Find("Cost").GetComponent<UnityEngine.UI.Text>().text = "$2650";
+        }
+        if (button.Equals("Dig"))
+        {
+            SceneManager.LoadScene("DigScene");
+        }
+
+        //building specific buttons
+        if (button.Equals("B1"))
+        {
+
+        }
+        if (button.Equals("B2"))
+        {
+
+        }
+        if (button.Equals("B3"))
+        {
+
+        }
+        if (button.Equals("B4"))
+        {
+
+        }
+        if (button.Equals("B5"))
+        {
+
+        }
+        if (button.Equals("B6"))
+        {
+
         }
     }
 
