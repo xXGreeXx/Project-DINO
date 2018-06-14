@@ -50,13 +50,14 @@ public class ButtonHandler : MonoBehaviour {
         if (button.Equals("buyelectricfence"))
         {
             GameObject fence = Instantiate(GameObject.Find("fence"));
-            fence.AddComponent<BuildingPlacementHandler>();
+            fence.AddComponent<FencePlacementScript>();
             buildPane.SetActive(false);
         }
         if (button.Equals("buyhotel"))
         {
-            GameObject fence = Instantiate(GameObject.Find("hotel"));
-            fence.AddComponent<BuildingPlacementHandler>();
+            GameObject o = Instantiate(GameObject.Find("hotel"));
+            o.SetActive(true);
+            o.AddComponent<BuildingPlacementHandler>();
             buildPane.SetActive(false);
         }
         if (button.Equals("Site1"))
@@ -70,8 +71,29 @@ public class ButtonHandler : MonoBehaviour {
         {
             digSitePane.SetActive(true);
             digSitePane.transform.Find("Title").GetComponent<UnityEngine.UI.Text>().text = "Site #2";
-            digSitePane.transform.Find("Location").GetComponent<UnityEngine.UI.Text>().text = "Arizona, USA";
+            digSitePane.transform.Find("Location").GetComponent<UnityEngine.UI.Text>().text = "Texas, USA";
             digSitePane.transform.Find("Cost").GetComponent<UnityEngine.UI.Text>().text = "$750";
+        }
+        if (button.Equals("Site3"))
+        {
+            digSitePane.SetActive(true);
+            digSitePane.transform.Find("Title").GetComponent<UnityEngine.UI.Text>().text = "Site #3";
+            digSitePane.transform.Find("Location").GetComponent<UnityEngine.UI.Text>().text = "Ethiopa, Africa";
+            digSitePane.transform.Find("Cost").GetComponent<UnityEngine.UI.Text>().text = "$1550";
+        }
+        if (button.Equals("Site4"))
+        {
+            digSitePane.SetActive(true);
+            digSitePane.transform.Find("Title").GetComponent<UnityEngine.UI.Text>().text = "Site #4";
+            digSitePane.transform.Find("Location").GetComponent<UnityEngine.UI.Text>().text = "Wyoming, USA";
+            digSitePane.transform.Find("Cost").GetComponent<UnityEngine.UI.Text>().text = "$1650";
+        }
+        if (button.Equals("Site5"))
+        {
+            digSitePane.SetActive(true);
+            digSitePane.transform.Find("Title").GetComponent<UnityEngine.UI.Text>().text = "Site #5";
+            digSitePane.transform.Find("Location").GetComponent<UnityEngine.UI.Text>().text = "Tanzania, Africa";
+            digSitePane.transform.Find("Cost").GetComponent<UnityEngine.UI.Text>().text = "$1850";
         }
     }
 

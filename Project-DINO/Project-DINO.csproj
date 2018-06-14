@@ -83,8 +83,11 @@
     <Compile Include="Assets\Scripts\BuildingPlacementHandler.cs" />
     <Compile Include="Assets\Scripts\ButtonHandler.cs" />
     <Compile Include="Assets\Scripts\CameraControllerScript.cs" />
+    <Compile Include="Assets\Scripts\FencePlacementScript.cs" />
     <Compile Include="Assets\Scripts\MeshInverter.cs" />
     <Compile Include="Assets\Scripts\PersonControlScript.cs" />
+    <Compile Include="Assets\Scripts\RockBehaviorScript.cs" />
+    <Compile Include="Assets\Scripts\ToolSelection.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
