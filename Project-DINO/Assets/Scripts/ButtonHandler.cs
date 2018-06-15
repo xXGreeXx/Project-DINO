@@ -8,6 +8,7 @@ public class ButtonHandler : MonoBehaviour {
     public static GameObject buildPane;
     public static GameObject buildingDataPane;
     public static GameObject environmentPane;
+    public static GameObject inventoryPane;
     public static GameObject digSitePane;
 
     public void Start()
@@ -17,18 +18,30 @@ public class ButtonHandler : MonoBehaviour {
         buildPane = GameObject.Find("BuildPane");
         buildingDataPane = GameObject.Find("BuildingDataPane");
         environmentPane = GameObject.Find("EnvironmentPane");
+        inventoryPane = GameObject.Find("InventoryPane");
         digSitePane = GameObject.Find("SiteDataPane");
         mapPane.SetActive(false);
         optionsPane.SetActive(false);
         buildPane.SetActive(false);
         buildingDataPane.SetActive(false);
         environmentPane.SetActive(false);
+        inventoryPane.SetActive(false);
         digSitePane.SetActive(false);
 
     }
 
     public void ButtonPressed(string button)
     {
+        //main menu buttons
+        if (button.Equals("Continue"))
+        {
+
+        }
+        if (button.Equals("Exit"))
+        {
+            Application.Quit();
+        }
+
         //dig site buttons
         if (button.Equals("ReturnPark"))
         {
@@ -40,11 +53,19 @@ public class ButtonHandler : MonoBehaviour {
         {
             mapPane.SetActive(!mapPane.activeInHierarchy);
             buildPane.SetActive(false);
+            inventoryPane.SetActive(false);
         }
         if (button.Equals("build"))
         {
             buildPane.SetActive(!buildPane.activeInHierarchy);
             mapPane.SetActive(false);
+            inventoryPane.SetActive(false);
+        }
+        if (button.Equals("inventory"))
+        {
+            inventoryPane.SetActive(!inventoryPane.activeInHierarchy);
+            mapPane.SetActive(false);
+            buildPane.SetActive(false);
         }
         if (button.Equals("environment"))
         {
