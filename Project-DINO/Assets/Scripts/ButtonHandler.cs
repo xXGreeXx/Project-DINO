@@ -64,9 +64,25 @@ public class ButtonHandler : MonoBehaviour {
         if (button.Equals("buyhotel"))
         {
             GameObject o = Instantiate(GameObject.Find("hotel"));
-            o.SetActive(true);
             o.AddComponent<BuildingPlacementHandler>();
             buildPane.SetActive(false);
+        }
+        if (button.Equals("buygenomelab"))
+        {
+            GameObject o = GameObject.CreatePrimitive(PrimitiveType.Cube);
+            o.transform.localScale = new Vector3(80, 80, 80);
+            o.AddComponent<BuildingPlacementHandler>();
+            buildPane.SetActive(false);
+
+            BuildingClickScript c = o.AddComponent<BuildingClickScript>();
+            c.buildingTitle = "Genome Lab";
+            c.buildingDescription = "The genome lab lets you genetically modify your dinosaurs. You can easily change and synthesize their genetics to create whatever you please.";
+            c.buttonOneText = "Open";
+            c.buttonTwoText = "Close";
+            c.buttonThreeText = "Laboratory";
+            c.buttonFourText = "";
+            c.buttonFiveText = "Move";
+            c.buttonSixText = "Demolish";
         }
 
         //environment buttons
@@ -252,11 +268,12 @@ public class ButtonHandler : MonoBehaviour {
         }
         if (button.Equals("B5"))
         {
-
+            MainGameHandler.selectedBuilding.AddComponent<BuildingPlacementHandler>();
         }
         if (button.Equals("B6"))
         {
-
+            Destroy(MainGameHandler.selectedBuilding);
+            MainGameHandler.selectedBuilding = null;
         }
     }
 
