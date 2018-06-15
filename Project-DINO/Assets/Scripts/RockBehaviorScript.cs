@@ -5,8 +5,16 @@ using UnityEngine;
 public class RockBehaviorScript : MonoBehaviour {
 
 	// Use this for initialization
-	void Start () {
-		
+	void Start ()
+    {
+        if (Random.Range(0, 100) < 10)
+        {
+            GameObject bone = GameObject.Instantiate(GameObject.Find("Bone"));
+            bone.transform.parent = this.transform;
+            bone.transform.localPosition = new Vector3(0, 0, 0);
+
+            this.transform.gameObject.tag = "Bone";
+        }	
 	}
 	
 	// Update is called once per frame

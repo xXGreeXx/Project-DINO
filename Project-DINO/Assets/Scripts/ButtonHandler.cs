@@ -29,6 +29,12 @@ public class ButtonHandler : MonoBehaviour {
 
     public void ButtonPressed(string button)
     {
+        //dig site buttons
+        if (button.Equals("ReturnPark"))
+        {
+            SceneManager.LoadScene("Game");
+        }
+
         //menu buttons
         if (button.Equals("map"))
         {
@@ -69,8 +75,7 @@ public class ButtonHandler : MonoBehaviour {
         }
         if (button.Equals("buygenomelab"))
         {
-            GameObject o = GameObject.CreatePrimitive(PrimitiveType.Cube);
-            o.transform.localScale = new Vector3(80, 80, 80);
+            GameObject o = Instantiate(GameObject.Find("laboratory"));
             o.AddComponent<BuildingPlacementHandler>();
             buildPane.SetActive(false);
 
