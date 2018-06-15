@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Rock
   - Bone
+  - Amber
   layers:
   - Default
   - TransparentFX

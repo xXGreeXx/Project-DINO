@@ -90,6 +90,7 @@
     <Compile Include="Assets\Scripts\PersonControlScript.cs" />
     <Compile Include="Assets\Scripts\RockBehaviorScript.cs" />
     <Compile Include="Assets\Scripts\ToolSelection.cs" />
+    <Compile Include="Assets\Scripts\UVScroll.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

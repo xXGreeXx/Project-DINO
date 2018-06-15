@@ -37,7 +37,13 @@ public class BoatMoveScript : MonoBehaviour {
         //unload passengers
         if (down && amountOfPeopleOnBoat > 0)
         {
+            GameObject person = GameObject.CreatePrimitive(PrimitiveType.Cube);
+            person.name = "person";
+            person.transform.localScale = new Vector3(5, 10, 5);
+            person.transform.position = new Vector3(-12907.7F, 2477F, -3703.8F);
+            person.AddComponent<PersonControlScript>();
 
+            amountOfPeopleOnBoat = 0;
         }
     }
 }

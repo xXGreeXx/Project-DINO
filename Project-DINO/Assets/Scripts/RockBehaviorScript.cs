@@ -10,12 +10,24 @@ public class RockBehaviorScript : MonoBehaviour {
         if (Random.Range(0, 100) < 10)
         {
             GameObject bone = GameObject.Instantiate(GameObject.Find("Bone"));
+            bone.name = "Artifact";
             bone.transform.parent = this.transform;
             bone.transform.localPosition = new Vector3(0, 0, 0);
+            bone.tag = "Bone";
 
             this.transform.gameObject.tag = "Bone";
-        }	
-	}
+        }
+        else if (Random.Range(0, 200) < 10)
+        {
+            GameObject bone = GameObject.Instantiate(GameObject.Find("Amber"));
+            bone.name = "Artifact";
+            bone.transform.parent = this.transform;
+            bone.transform.localPosition = new Vector3(0, 0, -0.5F);
+            bone.tag = "Amber";
+
+            this.transform.gameObject.tag = "Bone";
+        }
+    }
 	
 	// Update is called once per frame
 	void Update () {
