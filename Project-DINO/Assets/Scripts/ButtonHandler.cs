@@ -44,10 +44,6 @@ public class ButtonHandler : MonoBehaviour {
         {
             environmentPane.SetActive(!environmentPane.activeInHierarchy);
         }
-        if (button.Equals("options"))
-        {
-            optionsPane.SetActive(!optionsPane.activeInHierarchy);
-        }
 
         //build buttons
         if (button.Equals("buysidewalk"))
@@ -232,11 +228,19 @@ public class ButtonHandler : MonoBehaviour {
         //building specific buttons
         if (button.Equals("B1"))
         {
-
+            if (MainGameHandler.selectedBuilding.name.Equals("Gate"))
+            {
+                MainGameHandler.selectedBuilding.GetComponent<Animator>().Play("State 0 0", 0);
+                MainGameHandler.selectedBuilding.GetComponent<Animator>().Play("State 0 0 0", 0);
+            }
         }
         if (button.Equals("B2"))
         {
-
+            if (MainGameHandler.selectedBuilding.name.Equals("Gate"))
+            {
+                MainGameHandler.selectedBuilding.GetComponent<Animator>().Play("State 0", 0);
+                MainGameHandler.selectedBuilding.GetComponent<Animator>().Play("State 0", 1);
+            }
         }
         if (button.Equals("B3"))
         {

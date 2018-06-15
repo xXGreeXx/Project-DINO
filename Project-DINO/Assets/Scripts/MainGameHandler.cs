@@ -7,6 +7,7 @@ public class MainGameHandler : MonoBehaviour {
     public static string selectedMouseTool = string.Empty;
     Terrain t;
     float[,] originalHeights;
+    public static GameObject selectedBuilding;
 
     // Use this for initialization
     void Start ()
@@ -42,6 +43,12 @@ public class MainGameHandler : MonoBehaviour {
                     raiselowerTerrainArea(hit.point - t.transform.position, 10, 10, 5, -0.01f);
                 }
             }
+        }
+
+        //handle options menu
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            ButtonHandler.optionsPane.SetActive(!ButtonHandler.optionsPane.activeInHierarchy);
         }
     }
 

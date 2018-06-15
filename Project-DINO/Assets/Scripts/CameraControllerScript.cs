@@ -26,7 +26,7 @@ public class CameraControllerScript : MonoBehaviour
         }
 
         //rotate camera
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(1))
         {
             transform.LookAt(target);
             transform.RotateAround(target, Vector3.up, Input.GetAxis("Mouse X") * 2);

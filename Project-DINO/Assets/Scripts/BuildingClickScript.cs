@@ -30,5 +30,7 @@ public class BuildingClickScript : MonoBehaviour {
         ButtonHandler.buildingDataPane.transform.Find("B4").Find("Text").GetComponent<UnityEngine.UI.Text>().text = buttonFourText;
         ButtonHandler.buildingDataPane.transform.Find("B5").Find("Text").GetComponent<UnityEngine.UI.Text>().text = buttonFiveText;
         ButtonHandler.buildingDataPane.transform.Find("B6").Find("Text").GetComponent<UnityEngine.UI.Text>().text = buttonSixText;
+
+        MainGameHandler.selectedBuilding = this.gameObject;
     }
 }
