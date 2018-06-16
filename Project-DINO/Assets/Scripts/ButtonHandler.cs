@@ -54,6 +54,14 @@ public class ButtonHandler : MonoBehaviour {
             loadGamePane.SetActive(true);
             newGamePane.SetActive(false);
         }
+        if (button.Equals("begin"))
+        {
+            MainGameHandler.money = int.Parse(newGamePane.transform.Find("MoneyBox").Find("Text").GetComponent<UnityEngine.UI.Text>().text.Substring(1));
+            MainGameHandler.parkName = newGamePane.transform.Find("NameBox").Find("Text").GetComponent<UnityEngine.UI.Text>().text;
+
+            LoadScreenManager.TargetScene = "Game";
+            SceneManager.LoadScene("LoadScene");
+        }
         if (button.Equals("Exit"))
         {
             Application.Quit();
@@ -62,7 +70,29 @@ public class ButtonHandler : MonoBehaviour {
         //dig site buttons
         if (button.Equals("ReturnPark"))
         {
-            SceneManager.LoadScene("Game");
+            LoadScreenManager.TargetScene = "Game";
+            SceneManager.LoadScene("LoadScene");
+        }
+
+        //in game menu buttons
+        if (button.Equals("return"))
+        {
+            optionsPane.SetActive(false);
+        }
+        if (button.Equals("save"))
+        {
+            MainGameHandler.SaveGameData();
+        }
+        if (button.Equals("returnmenu"))
+        {
+            MainGameHandler.SaveGameData();
+            LoadScreenManager.TargetScene = "MainMenu";
+            SceneManager.LoadScene("LoadScene");
+        }
+        if (button.Equals("exitgame"))
+        {
+            MainGameHandler.SaveGameData();
+            Application.Quit();
         }
 
         //menu buttons
@@ -281,7 +311,8 @@ public class ButtonHandler : MonoBehaviour {
         }
         if (button.Equals("Dig"))
         {
-            SceneManager.LoadScene("DigScene");
+            LoadScreenManager.TargetScene = "DigScene";
+            SceneManager.LoadScene("LoadScene");
         }
 
         //building specific buttons

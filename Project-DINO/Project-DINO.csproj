@@ -84,6 +84,7 @@
     <Compile Include="Assets\Scripts\ButtonHandler.cs" />
     <Compile Include="Assets\Scripts\CameraControllerScript.cs" />
     <Compile Include="Assets\Scripts\FencePlacementScript.cs" />
+    <Compile Include="Assets\Scripts\LoadScreenManager.cs" />
     <Compile Include="Assets\Scripts\MainGameHandler.cs" />
     <Compile Include="Assets\Scripts\MainGameHandlerForDigScene.cs" />
     <Compile Include="Assets\Scripts\MeshInverter.cs" />

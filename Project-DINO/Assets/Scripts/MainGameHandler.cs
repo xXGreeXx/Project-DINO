@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class MainGameHandler : MonoBehaviour {
 
+    //terrain data
     public static string selectedMouseTool = string.Empty;
     Terrain t;
     float[,] originalHeights;
     public static GameObject selectedBuilding;
+
+    //park data
+    public static string parkName;
+    public static int money;
 
     // Use this for initialization
     void Start ()
@@ -50,6 +55,12 @@ public class MainGameHandler : MonoBehaviour {
         {
             ButtonHandler.optionsPane.SetActive(!ButtonHandler.optionsPane.activeInHierarchy);
         }
+    }
+
+    //save game data
+    public static void SaveGameData()
+    {
+
     }
 
     //raise/lower terrain area at pos
