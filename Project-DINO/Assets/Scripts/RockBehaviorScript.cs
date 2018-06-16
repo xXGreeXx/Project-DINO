@@ -15,7 +15,7 @@ public class RockBehaviorScript : MonoBehaviour {
             bone.transform.localPosition = new Vector3(0, 0, 0);
             bone.tag = "Bone";
 
-            this.transform.gameObject.tag = "Bone";
+            this.transform.gameObject.tag = "BoneRock";
         }
         else if (Random.Range(0, 200) < 10)
         {
@@ -25,7 +25,7 @@ public class RockBehaviorScript : MonoBehaviour {
             bone.transform.localPosition = new Vector3(0, 0, -0.5F);
             bone.tag = "Amber";
 
-            this.transform.gameObject.tag = "Bone";
+            this.transform.gameObject.tag = "BoneRock";
         }
     }
 	

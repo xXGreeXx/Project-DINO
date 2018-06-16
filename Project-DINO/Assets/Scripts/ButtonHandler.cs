@@ -11,6 +11,9 @@ public class ButtonHandler : MonoBehaviour {
     public static GameObject inventoryPane;
     public static GameObject digSitePane;
 
+    public static GameObject newGamePane;
+    public static GameObject loadGamePane;
+
     public void Start()
     {
         mapPane = GameObject.Find("MapPane");
@@ -20,14 +23,18 @@ public class ButtonHandler : MonoBehaviour {
         environmentPane = GameObject.Find("EnvironmentPane");
         inventoryPane = GameObject.Find("InventoryPane");
         digSitePane = GameObject.Find("SiteDataPane");
-        mapPane.SetActive(false);
-        optionsPane.SetActive(false);
-        buildPane.SetActive(false);
-        buildingDataPane.SetActive(false);
-        environmentPane.SetActive(false);
-        inventoryPane.SetActive(false);
-        digSitePane.SetActive(false);
+        newGamePane = GameObject.Find("NewGamePanel");
+        loadGamePane = GameObject.Find("LoadGamePanel");
+        if (mapPane != null) mapPane.SetActive(false);
+        if (optionsPane != null) optionsPane.SetActive(false);
+        if (buildPane != null) buildPane.SetActive(false);
+        if (buildingDataPane != null) buildingDataPane.SetActive(false);
+        if (environmentPane != null) environmentPane.SetActive(false);
+        if (inventoryPane != null) inventoryPane.SetActive(false);
+        if (digSitePane != null) digSitePane.SetActive(false);
 
+        if (newGamePane != null) newGamePane.SetActive(false);
+        if (loadGamePane != null) loadGamePane.SetActive(false);
     }
 
     public void ButtonPressed(string button)
@@ -36,6 +43,16 @@ public class ButtonHandler : MonoBehaviour {
         if (button.Equals("Continue"))
         {
 
+        }
+        if (button.Equals("New"))
+        {
+            newGamePane.SetActive(true);
+            loadGamePane.SetActive(false);
+        }
+        if (button.Equals("Load"))
+        {
+            loadGamePane.SetActive(true);
+            newGamePane.SetActive(false);
         }
         if (button.Equals("Exit"))
         {

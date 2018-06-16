@@ -20,6 +20,6 @@ public class BuildingPlacementHandler : MonoBehaviour {
         if (Input.GetMouseButtonDown(0)) Destroy(this.gameObject.GetComponent<BuildingPlacementHandler>());
         else if (Input.GetKeyDown(KeyCode.B)) Destroy(this.gameObject);
 
-        if (Input.GetKeyDown(KeyCode.R)) this.transform.rotation = Quaternion.Euler(new Vector3(0, 90 + this.transform.rotation.eulerAngles.y, 0));
+        if (Input.GetKeyDown(KeyCode.R)) this.transform.rotation = Quaternion.Euler(new Vector3(this.transform.rotation.eulerAngles.x, 90 + this.transform.rotation.eulerAngles.y, this.transform.rotation.eulerAngles.z));
     }
 }

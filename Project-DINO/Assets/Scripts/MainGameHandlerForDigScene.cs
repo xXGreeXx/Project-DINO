@@ -20,7 +20,7 @@ public class MainGameHandlerForDigScene : MonoBehaviour {
         {
             completePanel.SetActive(true);
             string findings = "Findings: \n";
-            GameObject[] bones = GameObject.FindGameObjectsWithTag("Bone");
+            GameObject[] bones = GameObject.FindGameObjectsWithTag("BoneRock");
             foreach (GameObject bone in bones)
             {
                 findings += bone.transform.Find("Artifact").tag + "\n";
