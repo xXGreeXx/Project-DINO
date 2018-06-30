@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.IO;
 
 public class ButtonHandler : MonoBehaviour {
 
@@ -9,10 +10,10 @@ public class ButtonHandler : MonoBehaviour {
     public static GameObject buildingDataPane;
     public static GameObject environmentPane;
     public static GameObject inventoryPane;
+    public static GameObject financePane;
     public static GameObject digSitePane;
 
     public static GameObject newGamePane;
-    public static GameObject loadGamePane;
 
     public void Start()
     {
@@ -22,19 +23,19 @@ public class ButtonHandler : MonoBehaviour {
         buildingDataPane = GameObject.Find("BuildingDataPane");
         environmentPane = GameObject.Find("EnvironmentPane");
         inventoryPane = GameObject.Find("InventoryPane");
+        financePane = GameObject.Find("FinancePane");
         digSitePane = GameObject.Find("SiteDataPane");
         newGamePane = GameObject.Find("NewGamePanel");
-        loadGamePane = GameObject.Find("LoadGamePanel");
         if (mapPane != null) mapPane.SetActive(false);
         if (optionsPane != null) optionsPane.SetActive(false);
         if (buildPane != null) buildPane.SetActive(false);
         if (buildingDataPane != null) buildingDataPane.SetActive(false);
         if (environmentPane != null) environmentPane.SetActive(false);
         if (inventoryPane != null) inventoryPane.SetActive(false);
+        if (financePane != null) financePane.SetActive(false);
         if (digSitePane != null) digSitePane.SetActive(false);
 
         if (newGamePane != null) newGamePane.SetActive(false);
-        if (loadGamePane != null) loadGamePane.SetActive(false);
     }
 
     public void ButtonPressed(string button)
@@ -47,11 +48,9 @@ public class ButtonHandler : MonoBehaviour {
         if (button.Equals("New"))
         {
             newGamePane.SetActive(true);
-            loadGamePane.SetActive(false);
         }
         if (button.Equals("Load"))
         {
-            loadGamePane.SetActive(true);
             newGamePane.SetActive(false);
         }
         if (button.Equals("begin"))
@@ -101,18 +100,28 @@ public class ButtonHandler : MonoBehaviour {
             mapPane.SetActive(!mapPane.activeInHierarchy);
             buildPane.SetActive(false);
             inventoryPane.SetActive(false);
+            financePane.SetActive(false);
         }
         if (button.Equals("build"))
         {
             buildPane.SetActive(!buildPane.activeInHierarchy);
             mapPane.SetActive(false);
             inventoryPane.SetActive(false);
+            financePane.SetActive(false);
         }
         if (button.Equals("inventory"))
         {
             inventoryPane.SetActive(!inventoryPane.activeInHierarchy);
             mapPane.SetActive(false);
             buildPane.SetActive(false);
+            financePane.SetActive(false);
+        }
+        if (button.Equals("finance"))
+        {
+            financePane.SetActive(!financePane.activeInHierarchy);
+            mapPane.SetActive(false);
+            buildPane.SetActive(false);
+            inventoryPane.SetActive(false);
         }
         if (button.Equals("environment"))
         {
